@@ -10,13 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_14_074303) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_15_062722) do
+  create_table "chef_can_cooks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "chef_id", null: false
+    t.bigint "food_id", null: false
+    t.index ["chef_id"], name: "index_chef_can_cooks_on_chef_id"
+    t.index ["food_id"], name: "index_chef_can_cooks_on_food_id"
+  end
+
+  create_table "chefs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", limit: 100, null: false
+    t.datetime "age"
+    t.string "idol"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "foods", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", limit: 100, null: false
     t.datetime "age"
     t.string "hobby", limit: 100
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "Heroes"
   end
 
+  add_foreign_key "chef_can_cooks", "chefs"
+  add_foreign_key "chef_can_cooks", "foods"
 end
