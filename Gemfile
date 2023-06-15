@@ -8,7 +8,6 @@ gem "rails", "~> 7.0.5"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
 gem 'faker', '~> 3.2'
 gem 'mysql2', '~> 0.5.5'
 
