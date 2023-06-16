@@ -1,8 +1,12 @@
-Report 15/06/2023
-Yesterday:
-- Set up a rails server, research about MVC, ORM
-- Learn about Active Record basic, migration
-- Research the Active Record Datatype, Optional 
-Today:
-- Dig deeper  
-Issues: no
+Model 
+CamelCase . singular
+method chung để trong ApplicationRecord.
+super ?
+- Validation ... if: -> {} 
+- Callback
+- Associations
+- Query (scope)
+- scope changable 
+- default scope
+class method in scope ? not recommend
+scope ko nên dùng khi result trả về ko phải ActiveRecord : Relation
